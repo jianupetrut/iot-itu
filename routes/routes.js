@@ -11,7 +11,10 @@ router.get("/hello", (req, res, next) => {
 
 router.post("/new_recording", (req, res, next) => {
     const newRecording = new SoundData({
-        readings: req.body.payload_fields
+        audio: req.body.payload_fields.audio,
+        gate: req.body.payload_fields.gate,
+        envelope: req.body.payload_fields.envelope,
+        timestamp: req.body.metadata.time
     })
 
     newRecording
