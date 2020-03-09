@@ -11,7 +11,7 @@ router.get("/hello", (req, res, next) => {
 
 router.post("/new_recording", (req, res, next) => {
     const newRecording = new SoundData({
-        readings: req.body.readings
+        readings: req.body.payload_fields
     })
 
     newRecording
