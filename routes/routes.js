@@ -25,4 +25,10 @@ router.post("/new_recording", (req, res, next) => {
     .catch(err => res.status(500).json(err));
 })
 
+router.get("/data", (req, res, next) => {
+    SoundData.find()
+    .then(data => res.status(200).json(data))
+    .catch(err => res.status(500).json(err));
+})
+
 module.exports = router;
