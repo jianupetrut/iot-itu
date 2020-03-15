@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>ITU Library - Noise</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+      integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>ITU Library - Noise</h1>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["15:00", "15:05", "15:10", "15:15", "15:20"],
+          datasets: [
+            {
+              label: "Audio",
+              data: [1200, 1300, 1400, 1200, 1200],
+              fill: false,
+              borderColor: "rgb(84, 153, 199)"
+            },
+            {
+              label: "Envelope",
+              data: [1300, 1100, 1400, 1200, 1300],
+              fill: false,
+              borderColor: "rgb(244, 208, 63)"
+            },
+            {
+              label: "Gate",
+              data: [0, 0, 4095, 0, 4095],
+              fill: false,
+              borderColor: "rgb(82, 190, 128)",
+              lineTension: 0.1
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
